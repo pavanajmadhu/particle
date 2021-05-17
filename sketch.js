@@ -6,6 +6,7 @@ var Engine = Matter.Engine;
 var particles = [];
 var plinkos = [];
 var divisions =[];
+var balls=[];
 var divisionHeight=300;
 var score =0;
 function setup() {
@@ -48,7 +49,7 @@ function setup() {
 
   //create 4th row of plinko objects
 
-particle=new Particles(400,400)
+//=new Particles(400,400)
   //create particle objects
   
     
@@ -80,7 +81,12 @@ function draw() {
   //display the paricles 
   //mam i dont know the reason why the particles.js is not linked with html
   if(frameCount%60===0){
-    
-  particle.push(random(width/2-10,width/2+10),10,10)
-  }
+  
+  
+    balls.push(new Particles (random(0,600),20))
+   }
+
+for(var t=0;t<balls.length;t++){
+ balls[t].display();
+}
 }
